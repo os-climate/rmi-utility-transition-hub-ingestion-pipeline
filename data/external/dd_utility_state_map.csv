@@ -1,0 +1,9 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+state_abbr,State Abbreviation,,,
+state,State,,,
+capacity_owned_in_state,Total nameplate capacity of plants owned by the utility in this state.,MW,EIA860,
+capacity_operated_in_state,Total nameplate capacity of plants operated by the utility in this state.,MW,EIA860,
+mwh_sales_in_state,"Energy sales, in MWh, to all customer types.",MWh,EIA861,

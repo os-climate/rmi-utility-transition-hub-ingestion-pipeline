@@ -1,0 +1,17 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Reporting year,,FERC Form 1,
+technology,Technology,,FERC Form 1,
+steam,"FERC classification of “Steam” electric generating plants. This is occasionally reported
+differently for individual utilities, but typically includes “Conventional Steam Coal” and
+“Natural Gas Steam Turbine” technologies.",,,RMI mapped the “plant_type” field in FERC plant-level tables to FERC classification
+nuclear,FERC classification of “Nuclear” electric generating plants.,,,RMI mapped the “plant_type” field in FERC plant-level tables to FERC classification
+hydro,"FERC classification of “Conventional Hydroelectric” and “Hydroelectric Pumped Storage” electric generating plants.",,,RMI mapped the “plant_type” field in FERC plant-level tables to FERC classification
+other_fossil,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes several types of gas plants (combined cycle, combustion turbine, internal
+combustion) all plants that use petroleum liquids for fuel, and other fossil fuel plants
+not included in the “steam” category.",,,RMI mapped the “plant_type” field in FERC plant-level tables to FERC classification
+renewables,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes wind, solar, geothermal, and waste (municipal solid waste, landfill gas,
+waste biomass) plants.",,,RMI mapped the “plant_type” field in FERC plant-level tables to FERC classification
+employees,Number of employees,,FERC Form 1,

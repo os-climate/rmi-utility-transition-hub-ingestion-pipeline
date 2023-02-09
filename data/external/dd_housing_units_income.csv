@@ -1,0 +1,9 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Year,,,
+percent_AMI,"Fraction of Area Median Income. 100%+ includes all households with income above the area (county) median.",,DOE LEAD Tool,
+ownership,Classification of home ownership for the selected housing units (“owner” or “renter”),,DOE LEAD Tool,
+housing_units,"Number of occupied housing units (or households), adjusted to match number of utility customers.",,"DOE LEAD Tool, EIA861, RMI","Number of housing units from DOE LEAD Tool by county in 2018, connected to counties served by the utility from EIA861 in 2018, scaled uniformly across all counties to match the total number of utility customers in 2018 from EIA861. To extrapolate to other years, number of housing units from DOE LEAD Tool scaled to the number of customers in each year from EIA861."
+income,Total annual income for the group of housing units,$/year,"DOE LEAD Tool, US Census SAIPE","Income from DOE LEAD Tool by county in 2018, connected to counties served by the utility from EIA861 in 2018. To extrapolate to other years, income from DOE LEAD Tool scaled based on county-level median income from US Census SAIPE."

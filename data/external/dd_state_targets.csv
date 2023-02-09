@@ -1,0 +1,8 @@
+Data field,Definition,Data Source
+state,State,
+year,Year the target_value of the target_type applies to (e.g. 80% GHG reduction by 2050 for New Jersey),"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"
+year_type,"Whether the year_type is a base, interim, or final year associated with the target","C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"
+legal_standard,Whether the target was passed through executive or legislative mechanisms,"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"
+enforcement_standard,Whether the target is mandatory or a non-binding goal (voluntary),"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"
+target_type,"Whether the target_value refers to a greenhouse gas (GHG) reduction or a renewable portfolio standard (RPS)","C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"
+target_value,The percentage reduction of GHGs or percentage of renewables required under an RPS,"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation"

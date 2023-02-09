@@ -1,0 +1,12 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Reporting year,,FERC Form 1,
+FERC_class,"FERC technology classification, modified by RMI",,"FERC Form 1, RMI","All FERC classifications come directly from FERC, except for “other_fossil” and “renewables”, which are estimated components of the “other production plant” FERC classification. RMI used the “electric plant in service” and “accumulated provision for depreciation of electric utility plant” tables for the non-modified FERC classifications. To estimate original cost and accumulated depreciation of “renewables,” RMI used plant-level FERC data tables. To estimate accumulated depreciation of “renewables,” RMI tracked changes to original cost over time, and estimated additions to accumulated depreciation based on depreciation rates."
+original_cost,Cumulative historical investment in plant components still in service.,,"FERC Form 1, RMI",
+accum_depr,Accumulated depreciation of plant components still in service.,,"FERC Form 1, RMI","RMI estimated accumulated depreciation of asset retirement costs based on tracking historical changes to asset retirement costs and adding accumulated depreciation in each year based on depreciation rates. Then, RMI subtracted this estimate of accumulated depreciation of asset retirement costs from total accumulated depreciation to estimate accumulated depreciation of plant in service."
+net_plant_balance,Remaining net plant balance of plant components still in service,,"FERC Form 1, RMI",= original_cost - accum_depr
+ARC,Asset retirement costs,,"FERC Form 1, RMI",
+ARC_accum_depr,Accumulated depreciation of asset retirement costs,,"FERC Form 1, RMI","RMI estimated accumulated depreciation of asset retirement costs based on tracking historical changes to asset retirement costs and adding accumulated depreciation in each year based on depreciation rates"
+net_ARC,Net remaining asset retirement costs,,"FERC Form 1, RMI",= ARC - ARC_accum_depr

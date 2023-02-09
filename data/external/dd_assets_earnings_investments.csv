@@ -1,0 +1,38 @@
+Data field,,Definition,Units,Data Source,Methodology
+parent_name,,Name of ultimate parent company,,RMI,
+utility_name,,Name of utility,,RMI,
+respondent_id,,Utility ID from FERC,,FERC Form 1,
+year,,Reporting year,,FERC Form 1,
+asset,sub_asset,,,,
+steam,,"FERC classification of “Steam” electric generating plants. This is occasionally reported differently for individual utilities, but typically includes “Conventional Steam Coal” and “Natural Gas Steam Turbine” technologies.",,RMI,"Asset values for these categories are remaining net plant balance for plants in service, calculated as original cost (historical capital investment) from the “Electric Plant in Service” table minus accumulated depreciation from the “Accumulated Provision for Depreciation of Electric Utility Plant” table in FERC Form 1."
+nuclear,,FERC classification of “Nuclear” electric generating plants.,,RMI,
+hydro,,"FERC classification of “Conventional Hydroelectric” and “Hydroelectric Pumped Storage” electric generating plants.",,RMI,
+renewables,,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes wind, solar, geothermal, and waste (municipal solid waste, landfill gas, waste biomass) plants.",,RMI,"Asset values for this category are remaining net plant balance for plants in service, calculated as original cost (historical capital investment) minus accumulated depreciation. Original cost values are taken from plant-level tables in FERC form 1. Accumulated depreciation values are estimated. RMI assumed that in 2004, accumulated depreciation = 0. Then depreciation in each year is calculated as original_cost * depreciation_rate, with depreciation_rate assumed to be a single constant value for each technology."
+other_fossil,,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes several types of gas plants (combined cycle, combustion turbine, internal combustion) all plants that use petroleum liquids for fuel, and other fossil fuel plants not included in the “steam” category.",,RMI,"Asset values for the FERC classification of “Other” plants are calculated as original cost (historical capital investment) from the “Electric Plant in Service” table minus accumulated depreciation from the “Accumulated Provision for Depreciation of Electric Utility Plant” table in FERC Form 1. Then, “other_fossil” = “Other” - “renewables”"
+transmission,,FERC classification of “Transmission” plant.,,RMI,"Asset values for this category are remaining net plant balance for plants in service, calculated as original cost (historical capital investment) from the “Electric Plant in Service” table minus accumulated depreciation from the “Accumulated Provision for Depreciation of Electric Utility Plant” table in FERC Form 1."
+distribution,,FERC classification of “Distribution” plant.,,RMI,
+other,AROs,Asset retirement obligations,,RMI,
+other,construction_work _in_progress,Construction work in progress,,RMI,"This category includes electric plants under construction but not yet classified under a FERC classification."
+other,distribution_arc,Asset retirement costs for distribution plant.,,RMI,
+other,electric_plant_held _for_future_use,"Electric plant held for future use, technology not specified in FERC",,RMI,
+other,electric_plant _leased_to_others,"Electric plant leased to others, technology not specified in FERC",,RMI,
+other,experimental_plant,"Experimental electric plant, technology not specified in FERC",,RMI,
+other,general_plant,FERC classification of “General” electric plant.,,RMI,
+other,general_plant_arc,Asset retirement costs for “General” electric plant.,,RMI,
+other,hydro_arc,"Asset retirement costs for “Conventional Hydroelectric” and “Hydroelectric Pumped Storage” electric generating plants.",,RMI,
+other,intangible_plant,FERC classification of “Intangible” plant.,,RMI,
+other,net_ADIT,Net Accumulated Deferred Income Tax,,RMI,
+other,net_regulatory _assets,Net regulatory assets,,RMI,Sum of regulatory assets and regulatory liabilities
+other,net_working_capital,"Net working capital - current assets that are expected to be available or due within a year, and that are included in rate base and utility earnings.",,RMI,"Sum of “current & accrued assets” and “current and accrued liabilities” from the balance sheet, excluding accounts receivable and payable from associated companies, interest and dividends receivable, interest accrued, dividends declared, matured long-term debt and matured interest."
+other,nuclear_arc,Asset retirement costs for nuclear electric power generation plants.**,,RMI,
+other,other_deferred _debits_and_credits,Other deferred debits and credits on the balance sheet,,RMI,
+other,other_electric_plant,Other electric plant,,RMI,
+other,other_fossil_arc,Asset retirement costs for “other fossil” power generation plants.**,,RMI,
+other,other_noncurrent _liabilities,Other noncurrent liabilities on the balance sheet,,RMI,
+other,regional _transmission_and _market_operation,"FERC classification of “Regional Transmission and Market Operation” plant.",,RMI,
+other,renewables_arc,Asset retirement costs for renewable energy power plants.**,,RMI,
+other,steam_arc,Asset retirement costs for steam electric power generation plants.**,,RMI,
+other,transmission_arc,Asset retirement costs for steam electric power generation plants.**,,RMI,
+asset_value,,Asset value,$,"FERC Form 1, RMI","RMI combined the balance sheet and balance sheet detail tables from FERC Form 1 to obtain a detailed breakdown of the balance sheet. RMI then performed a line-by-line assessment of what is or is not included in electric utility rate base, and grouped each line of the balance sheet into asset and sub_asset categories. Values are end of year values."
+earnings_value,,Earnings in the given year on the asset,$,"FERC Form 1, RMI","earnings_value = asset_value*equity_ratio*ROE (see debt_equity table for equity_ratio and ROE)"
+investment_value,,Investments (capital expenditure) in the given year on the asset.,$,"FERC Form 1, RMI","Directly from the “additions” field in the FERC Form 1 “Electric Plant in Service” table (thus applicable only to electric plants in service)"

@@ -1,0 +1,35 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Year,,,
+technology,RMI’s groupings of technologies,,RMI,
+steam,"FERC classification of “Steam” electric generating plants. This is occasionally reported differently for individual utilities, but typically includes “Conventional Steam Coal” and “Natural Gas Steam Turbine” technologies.",,RMI,
+other_fossil,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes several types of gas plants (combined cycle, combustion turbine, internal
+combustion) all plants that use petroleum liquids for fuel, and other fossil fuel plants not included in the “steam” category.",,RMI,"Revenues for the FERC classification of “Other” plants are taken directly from FERC tables or calculated as described in the “component” methodology below. Then, “other_fossil” = “Other” - “renewables”"
+nuclear,FERC classification of “Nuclear” electric generating plants.,,RMI,
+hydro,FERC classification of “Hydraulic” electric generating plants.,,RMI,
+renewables,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes wind, solar, geothermal, and waste (municipal solid waste, landfill gas, waste biomass) plants.",,RMI,"Revenues for this category are based on estimates of depreciation and operation & maintenance expenses from plant-level tables in FERC form 1, and returns using capital balances from the assets_earnings table."
+transmission,FERC classification of “Transmission” plant.,,RMI,
+distribution,FERC classification of “Distribution” plant.,,RMI,
+purchased_power,Purchased power,,RMI,
+other,"Other physical and non-physical assets, including asset retirement obligations, tax assets, regulatory assets, construction work in progress, and other categories described on the assets_earnings tab.",,RMI,
+adjustment,"Balancing item to account for difference between RMI’s revenue requirement estimate and actual revenues collected.",,RMI,"Calculated as the difference between RMI’s total revenue estimate without an adjustment and actual revenues collected from EIA861."
+component,RMI’s categorization of revenue components based on the following groupings:,,RMI,
+adjustment,"Balancing item to account for difference between RMI’s revenue requirement estimate
+and actual revenues collected.",,RMI,"Calculated as the difference between RMI’s total revenue estimate without an adjustment and actual revenues collected from EIA861."
+amort_&_depl_of_utility_plant,Amortization and Depletion of Utility Plant,,RMI,
+depreciation_expense,Depreciation expense,,RMI,
+depreciation_expense_for_asset_retirement_costs,Depreciation expense for asset retirement costs,,RMI,
+fuel_expenses,Fuel Expenses,,RMI,
+maintenance_expenses,Maintenance expenses,,RMI,
+non_fuel_operation_expenses,Operation expenses excluding fuel,,RMI,
+PTC,Production tax credit,,RMI,"Generation from
+wind power plants (from the operation_emissions_by_tech data file) multiplied by the production tax credit rate."
+purchased_power,Purchased power expenses,,RMI,
+returns,"Total returns on capital, including both interest expenses and shareholder returns",,RMI,"= asset_value * ROR_grossed_up
+asset_value from assets_earnings table, with corresponding revenue_component and asset ROR_grossed_up = ROE/(1-blended_tax_rate)*equity_ratio + ROR ROE*equity_ratio; blended_tax_rate = federal_tax_rate + state_tax_rate*(1federal_tax_rate); state_tax_rate calculated as a weighted average of state tax rates, based on revenues in each state ROE and ROR from assets_earnings table"
+detail,Additional level of detail of revenue within each technology/component,,"FERC Form 1, RMI",
+revenue_total,revenue from all customer classes,$,"FERC Form 1, EIA 861, RMI","Most values taken directly from FERC Form 1 income statement and income statement detail tables (others described above). RMI estimated which lines would be included in revenue requirements; thus these values represent what revenues would have been if this year were used as a test year for a revenue requirement calculation."
+revenue_residential,revenue from residential customer class,$,"FERC Form 1, EIA 861, RMI","= revenue_total * revenue_residential/revenues_total revenues_residential and revenues_total
+from customers_sales table"

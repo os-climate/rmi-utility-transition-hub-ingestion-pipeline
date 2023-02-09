@@ -1,0 +1,10 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Reporting year,,FERC Form 1,
+customer_type,Type of customer,,FERC Form 1,
+customer_type_rmi,"Type of customer, as grouped by RMI and as displayed in the Portal",,RMI,
+customers,Number of customer accounts (i.e. number of meters),,FERC Form 1,
+sales,Energy sold,MWh,FERC Form 1,
+revenues,Revenues from electricity sales,$,FERC Form 1,

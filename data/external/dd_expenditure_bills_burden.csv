@@ -1,0 +1,25 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Reporting year,,FERC Form 1,
+percent_AMI,"Fraction of Area Median Income. 100%+ includes all households with income above
+the area (county) median.",,DOE LEAD Tool,
+ownership,Classification of home ownership for the selected housing units (“owner” or “renter”),,DOE LEAD Tool,
+electricity_gas_other,"Whether the technology corresponds to “Electricity,” “Gas,” or “Other Fuel” utility expenses",,RMI,
+technology,RMI’s groupings of technologies,,RMI,
+steam,"FERC classification of “Steam” electric generating plants. This is occasionally reported differently for individual utilities, but typically includes “Conventional Steam Coal” and “Natural Gas Steam Turbine” technologies.",,RMI,
+other_fossil,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes several types of gas plants (combined cycle, combustion turbine, internal combustion) all plants that use petroleum liquids for fuel, and other fossil fuel plants not included in the “steam” category.",,RMI,"Expenditures for the FERC classification of “Other” plants are taken directly from FERC tables or calculated as described in the “component” methodology below. Then, “other_fossil” = “Other” - “renewables”"
+nuclear,FERC classification of “Nuclear” electric generating plants.,,RMI,
+hydro,FERC classification of “Hydraulic” electric generating plants.,,RMI,
+renewables,"RMI refinement of FERC classification of “Other” electric generating plants. This category includes wind, solar, geothermal, and waste (municipal solid waste, landfill gas, waste biomass) plants.",,RMI,"Expenditures for this category are based on estimates of depreciation and operation & maintenance expenses from plant-level tables in FERC form 1, and returns using capital balances from the assets_earnings table."
+transmission,FERC classification of “Transmission” plant.,,RMI,
+distribution,FERC classification of “Distribution” plant.,,RMI,
+purchased_power,Purchased power,,RMI,
+other,"Other physical and non-physical assets, including asset retirement obligations, tax assets, regulatory assets, construction work in progress, and other categories described on the assets_earnings tab.",,RMI,
+adjustment,"Balancing item that accounts for the difference between RMI’s revenue requirement estimate and actual customer bills.",,RMI,
+Gas,Expenditures for gas utility service.,,RMI,
+Other Fuels,"Other household energy expenditures, including propane, fuel, and other fuels.",,RMI,
+expenditure,"Annual expenditure for a utility residential customer group on a technology/component.",$,"DOE LEAD Tool, EIA861, EIA176, EIA SEDS, FERC Form 1, RMI","Expenditures by county and household group from DOE LEAD Tool, connected to counties within a utility service territory from EIA861. Expenditures for all household groups scaled such that the sum of expenditures equals total residential customer revenues from EIA861. Expenditures multiplied by the fractional impact of each technology & component on customer bills, based on RMI’s revenue requirement calculation using FERC Form 1 (results given in the revenue_by_tech table)."
+bill,Average (mean) monthly energy bill for residential customers,"$/month /customer","FERC Form 1, EIA861, EIA176, EIA SEDS, RMI",= expenditure/housing_units/12
+burden,"Average (mean) annual fraction of income spent on energy bills for residential customers","fraction of income","FERC Form 1, EIA861, EIA176, EIA SEDS, RMI",= expenditure/income

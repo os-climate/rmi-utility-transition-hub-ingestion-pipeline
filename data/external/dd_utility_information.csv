@@ -1,0 +1,14 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+parent_LEI,Legal Entity Identifier of the parent company,,GLEIF,
+parent_ticker,"Ticker symbol, or stock symbol, of the stock for ultimate parent company",,Yahoo! Finance,
+parent_isin,"International Securities Identification Number (ISIN), a code for the securities issued by the ultimate parent company",,Yahoo! Finance,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+utility_id_eia,Utility Code from EIA,,EIA,
+utility_lei,Legal Entity Identifier of the utility,,GLEIF,
+entity_type_eia,Entity type from EIA,,EIA 861,
+utility_type_rmi,Type of utility as classified by RMI,,RMI,"Characterization based on entity_type from EIA861, the types of assets owned by the utility, and the business model of the utility."
+first_report_year,Year in which utility began reporting to FERC Form 1,,FERC Form 1,Determined by whether or not the utility reported a balance sheet in FERC Form 1
+last_report_year,Year in which utility last reported to FERC Form 1,,FERC Form 1,Determined by whether or not the utility reported a balance sheet in FERC Form 1
+duplicate_utility_id_eia,"Whether or not the utility_id_eia is a duplicate of another utility_id_eia, because the respondent is either an old company that has since merged into a new FERC respondent or the respondent has the same name as another respondent but does not report any data. This duplication is important to note when converting utility_id_eia to respondent_id; the lines where duplicate_utility_id_eia=True should be removed to avoid doublecounting of a dataset.",,RMI,

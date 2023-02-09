@@ -1,0 +1,39 @@
+Data field,Definition,Units,Data Source,Methodology
+parent_name,Name of ultimate parent company,,RMI,
+utility_name,Name of utility,,RMI,
+respondent_id,Utility ID from FERC,,FERC Form 1,
+year,Reporting year,,FERC Form 1,
+rate_base_actual,"Actual rate base (value of capital assets that the utility is allowed to earn a rate of return on)",$,"FERC Form 1, RMI",= sum of all assets from “assets_earnings” data
+equity_actual,Actual value of assets owned by shareholders at end of year,$,FERC Form 1,Total Proprietary Capital from FERC balance sheet
+debt_actual,Total long-term debt at end of year,$,FERC Form 1,Total Long-Term Debt from FERC balance sheet
+equity_ratio_actual,Ratio of equity:(equity+debt) at end of year,,"FERC Form 1, RMI",= equity_actual / (equity_actual + debt_actual)
+returns_actual,Returns on rate base,$,"FERC Form 1, RMI",net_electric_operating_income directly from FERC income statement
+earnings_actual,Shareholder earnings,$,"FERC Form 1, RMI",= returns_actual - interest_actual
+interest_actual,Interest expense to serve debt,$,"FERC Form 1, RMI","= net_interest_expenses * asset_fraction_electric net_interest_expenses directly from FERC income statement asset_fraction_electric calculated as utility_plant_electric / utility_plant_total from FERC Summary of Utility Plant table"
+fed_tax_expense_actual,Federal tax expense,$,FERC Form 1,"Sum of taxes on utility operating income and other income and deductions (FERC accounts 409.1 and 409.2)"
+pre_tax_net_income_actual,Pre-tax net income,$,FERC Form 1,"Sum all components of net income, excluding extraordinary items and tax"
+ROR_actual,Rate of return on rate base,,"FERC Form 1, RMI",= returns_actual / rate_base_actual
+ROE_actual,Rate of return on equity,,"FERC Form 1, RMI",= earnings_actual / (rate_base_actual * equity_ratio_actual)
+interest_rate_actual,Interest rate,,"FERC Form 1, RMI",= interest_actual / debt_actual
+equity_ratio,Ratio of equity:(equity+debt) used in the RMI Utility Transition Hub Portal,,"FERC Form 1, rate case
+data, RMI","use equity ratio from most recent completed rate case when available, and fill in missing data with equity_ratio_actual"
+ROR,Rate of return on rate base used in the RMI Utility Transition Hub Portal,,"FERC Form 1, rate case
+data, RMI","use ROR from most recent completed rate case when available, and fill in with national median ROR when rate case data not available"
+ROE,Rate of return on equity used in the RMI Utility Transition Hub Portal,,"FERC Form 1, rate case
+data, RMI","use ROE from most recent completed rate case when available, and fill in with national median ROE when rate case data not available"
+interest_rate,Interest rate used in the RMI Utility Transition Hub Portal,,"FERC Form 1, rate case
+data, RMI","use interest rate from most recent completed rate case when available, and fill in with national median interest rate when rate case data not available"
+effective_fed_tax_rate,Effective federal income tax rate,,"FERC Form 1, RMI",= fed_tax_expense_actual / pre_tax_net_income_actual
+equity_authorized,"Value of assets owned by shareholders, estimated based on RMI bottoms-up estimate of rate base and equity ratio primarily from rate case data.",$,"FERC Form 1, rate case
+data, RMI",= rate_base_actual * equity_ratio
+debt_authorized,"Total
+long-term debt at end of year, estimated based on RMI bottoms-up estimate of rate base and equity ratio primarily from rate case data.",$,"FERC Form 1, rate case
+data, RMI",= rate_base_actual - equity_authorized
+returns_authorized,"Returns on rate base, estimated based on RMI bottoms-up estimate of rate base and rate of return primarily from rate case data.",$,"FERC Form 1, rate case
+data, RMI",= rate_base_actual * ROR
+earnings_authorized,"Shareholder earnings, estimated based on RMI bottoms-up estimate of rate base and equity ratio and rate of return on equity primarily from rate case data.",$,"FERC Form 1, rate case
+data, RMI",= rate_base_actual * equity_ratio * ROE
+interest_authorized,"Interest expense to serve debt, estimated based on RMI bottoms-up estimate of rate base and equity ratio and rates of return from rate case data.",$,"FERC Form 1, rate case
+data, RMI",= returns_authorized - earnings_authorized
+interest_rate_authorized,"Interest rate, estimated based on RMI bottoms-up estimate of rate base and equity ratio and rates of return from rate case data.",,"FERC Form 1, rate case
+data, RMI",= interest_authorized / debt_authorized

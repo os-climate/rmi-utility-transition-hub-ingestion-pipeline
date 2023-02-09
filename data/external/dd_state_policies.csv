@@ -1,0 +1,8 @@
+Data field,Definition,Units,Data Source,Methodology
+state,State,,,
+state_abbr,State Abbreviation,,,
+securitization_policy,Status of securitization legislation for coal plant retirements.,,"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation",
+market_indexing_policy,Status of market indexing legislation.,,"C2ES, NCSL, NREL, US Climate Alliance, DSIRE, state legislation",
+fuel_pass_through,"“Passed through” means that 100% of fuel costs incurred by electric utilities are allowed to be passed on to customers in the state. “Shared” means that there is some level of cost sharing between electric utilities and customers.",,Finance Lab,
+governor_party,Political party that the governor belongs to.,,Ballotpedia,
+legislation_majority_party,Political party that controls the state legislature.,,Ballotpedia,
