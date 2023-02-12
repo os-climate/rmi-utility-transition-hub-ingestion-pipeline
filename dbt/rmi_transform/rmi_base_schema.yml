@@ -174,7 +174,7 @@ models:
         description: "Utility ID from FERC"
       - name: year
         description: "Reporting year"
-      - name: percent_AMI
+      - name: percent_ami
         description: "Fraction of Area Median Income. 100%+ includes all households with income above the area (county) median."
       - name: ownership
         description: "Classification of home ownership for the selected housing units (\"owner\" or \"renter\")"
@@ -245,8 +245,6 @@ models:
         description: "Name of ultimate parent company"
       - name: utility_name
         description: "Name of utility"
-      - name: respondent_id
-        description: "Utility ID from FERC"
       - name: year
         description: "Reporting year"
       - name: plant_name_eia
@@ -275,8 +273,6 @@ models:
         description: "NERC region that the plant is located in"
       - name: owned_or_total
         description: "A filter used in the RMI Utility Transition Hub Portal. \"Owned\" lines are utility-owned power plants. \"Total\" lines include Purchased Power, Energy Efficiency, and Demand Response."
-      - name: status
-        description: "Operating status from EIA (end of year)"
       - name: operating_month
         description: "Month that the generator began operating"
       - name: operating_year
@@ -285,20 +281,26 @@ models:
         description: "Month that the generator retired"
       - name: retirement_year
         description: "Year that the generator retired"
-      - name: technology_EIA
+      - name: technology_eia
         description: "Technology description from EIA"
-      - name: technology_RMI
+      - name: technology_rmi
         description: "Technology description from RMI"
-      - name: fuel_type_code
-        description: "Fuel type code"
-      - name: generation
-        description: "Net generation"
-      - name: fuel_consumption
-        description: "Energy content of fuel consumed"
-      - name: emissions_CO2
+      - name: emissions_co2
         description: "Emissions of carbon dioxide from fossil fuel combustion"
-      - name: emissions_NOx
+      - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
+      - name: utility_id_eia
+        description: Utility Code from EIA
+      - name: utility_type_rmi
+        description: Type of utility as classified by RMI
+      - name: operational_status_code
+        description: "Operating status from EIA (end of year)"
+      - name: energy_source_code
+        description: "Fuel type code"
+      - name: net_generation
+        description: "Net generation"
+      - name: fuel_consumed
+        description: "Energy content of fuel consumed"
 
   - name: rmi_operations_emissions_by_fuel
     description: "Generation, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nWithin each generator, fuel consumption is differentiated by fuel type."
@@ -308,8 +310,6 @@ models:
         description: "Name of ultimate parent company"
       - name: utility_name
         description: "Name of utility"
-      - name: respondent_id
-        description: "Utility ID from FERC"
       - name: year
         description: "Reporting year"
       - name: plant_name_eia
@@ -338,8 +338,6 @@ models:
         description: "NERC region that the plant is located in"
       - name: owned_or_total
         description: "A filter used in the RMI Utility Transition Hub Portal. \"Owned\" lines are utility-owned power plants. \"Total\" lines include Purchased Power, Energy Efficiency, and Demand Response."
-      - name: status
-        description: "Operating status from EIA (end of year)"
       - name: operating_month
         description: "Month that the generator began operating"
       - name: operating_year
@@ -348,20 +346,26 @@ models:
         description: "Month that the generator retired"
       - name: retirement_year
         description: "Year that the generator retired"
-      - name: technology_EIA
+      - name: technology_eia
         description: "Technology description from EIA"
-      - name: technology_RMI
+      - name: technology_rmi
         description: "Technology description from RMI"
-      - name: fuel_type_code
-        description: "Fuel type code"
-      - name: generation
-        description: "Net generation"
-      - name: fuel_consumption
-        description: "Energy content of fuel consumed"
-      - name: emissions_CO2
+      - name: emissions_co2
         description: "Emissions of carbon dioxide from fossil fuel combustion"
-      - name: emissions_NOx
+      - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
+      - name: utility_id_eia
+        description: Utility Code from EIA
+      - name: utility_type_rmi
+        description: Type of utility as classified by RMI
+      - name: operational_status_code
+        description: "Operating status from EIA (end of year)"
+      - name: energy_source_code
+        description: "Fuel type code"
+      - name: net_generation
+        description: "Net generation"
+      - name: fuel_consumed
+        description: "Energy content of fuel consumed"
 
   - name: rmi_operations_emissions_by_tech
     description: "Capacity, generation, capacity factor, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nEach generator is identified by a single technology."
@@ -371,8 +375,6 @@ models:
         description: "Name of ultimate parent company"
       - name: utility_name
         description: "Name of utility"
-      - name: respondent_id
-        description: "Utility ID from FERC"
       - name: year
         description: "Reporting year"
       - name: plant_name_eia
@@ -401,30 +403,34 @@ models:
         description: "NERC region that the plant is located in"
       - name: owned_or_total
         description: "A filter used in the RMI Utility Transition Hub Portal. \"Owned\" lines are utility-owned power plants. \"Total\" lines include Purchased Power, Energy Efficiency, and Demand Response."
-      - name: status
-        description: "Operating status from EIA (end of year)"
-      - name: technology_EIA
+      - name: technology_eia
         description: "Technology description from EIA"
-      - name: technology_RMI
+      - name: technology_rmi
         description: "Technology description from RMI"
       - name: capacity
         description: "Nameplate capacity"
       - name: year_end_capacity
         description: "Nameplate capacity at end of year"
-      - name: generation
-        description: "Net generation"
       - name: potential_generation
         description: "The total potential generation of a generator, if the generator operated at its nameplate capacity at all times."
       - name: capacity_factor
         description: "The ratio of actual energy produced to its hypothetical maximum possible (a \"utilization factor\")"
-      - name: fuel_consumption
-        description: "Energy content of fuel consumed"
-      - name: emissions_CO2
+      - name: emissions_co2
         description: "Emissions of carbon dioxide from fossil fuel combustion"
-      - name: emissions_NOx
+      - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
-      - name: emissions_SOx
+      - name: emissions_sox
         description: "Emissions of sulphur oxides from fossil fuel combustion"
+      - name: utility_id_eia
+        description: Utility Code from EIA
+      - name: utility_type_rmi
+        description: Type of utility as classified by RMI
+      - name: operational_status_code
+        description: "Operating status from EIA (end of year)"
+      - name: net_generation
+        description: "Net generation"
+      - name: fuel_consumed
+        description: "Energy content of fuel consumed"
 
   - name: rmi_revenue_by_tech
     description: "Revenues for each utility, by technology and component, for each utility."
