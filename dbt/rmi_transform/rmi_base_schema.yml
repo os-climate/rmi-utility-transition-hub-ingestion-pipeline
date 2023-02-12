@@ -24,7 +24,7 @@ models:
       - name: investment_value
         description: "Investments (capital expenditure) in the given year on the asset. "
 
-  - name: rmi_customers_sales
+  - name: ocustomers_sales
     description: "Number of customers, MWh electricity sales, and revenues by customer type."
 
     columns:
@@ -336,8 +336,6 @@ models:
         description: "Code for Independent System Operator (ISO) or Regional Transmission Operator (RTO) that the plant is connected to"
       - name: nerc_region
         description: "NERC region that the plant is located in"
-      - name: owned_or_total
-        description: "A filter used in the RMI Utility Transition Hub Portal. \"Owned\" lines are utility-owned power plants. \"Total\" lines include Purchased Power, Energy Efficiency, and Demand Response."
       - name: operating_month
         description: "Month that the generator began operating"
       - name: operating_year
