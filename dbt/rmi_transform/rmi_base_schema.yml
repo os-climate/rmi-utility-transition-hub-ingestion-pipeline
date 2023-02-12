@@ -311,7 +311,7 @@ models:
       - name: utility_name
         description: "Name of utility"
       - name: year
-        description: "Reporting year"
+        description: "Reporting year (check)"
       - name: plant_name_eia
         description: "Plant name from EIA"
       - name: plant_id_eia
@@ -366,7 +366,7 @@ models:
         description: "Energy content of fuel consumed"
 
   - name: rmi_operations_emissions_by_tech
-    description: "Capacity, generation, capacity factor, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nEach generator is identified by a single technology."
+    description: "Capacity, generation, capacity factor, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nEach generator is identified by a single technology. 2023"
 
     columns:
       - name: parent_name
