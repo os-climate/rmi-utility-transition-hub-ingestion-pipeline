@@ -290,9 +290,9 @@ models:
       - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
       - name: utility_id_eia
-        description: Utility Code from EIA
+        description: "Utility Code from EIA"
       - name: utility_type_rmi
-        description: Type of utility as classified by RMI
+        description: "Type of utility as classified by RMI"
       - name: operational_status_code
         description: "Operating status from EIA (end of year)"
       - name: energy_source_code
@@ -355,9 +355,9 @@ models:
       - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
       - name: utility_id_eia
-        description: Utility Code from EIA
+        description: "Utility Code from EIA"
       - name: utility_type_rmi
-        description: Type of utility as classified by RMI
+        description: "Type of utility as classified by RMI"
       - name: operational_status_code
         description: "Operating status from EIA (end of year)"
       - name: energy_source_code
@@ -422,9 +422,9 @@ models:
       - name: emissions_sox
         description: "Emissions of sulphur oxides from fossil fuel combustion"
       - name: utility_id_eia
-        description: Utility Code from EIA
+        description: "Utility Code from EIA"
       - name: utility_type_rmi
-        description: Type of utility as classified by RMI
+        description: "Type of utility as classified by RMI"
       - name: operational_status_code
         description: "Operating status from EIA (end of year)"
       - name: net_generation
