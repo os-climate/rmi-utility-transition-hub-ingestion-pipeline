@@ -3,6 +3,12 @@ version: 2
 models:
   - name: rmi_assets_earnings_investments
     description: "Detailed breakdown of utility assets in electric rate base, earnings on these assets, and annual investments (capital additions) by technology."
+    config:
+      meta: {
+        tname: "assets_earnings_investments",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "*for a detailed description of ferc accounts, see https://www.ecfr.gov/cgi-bin/text-idx?sid=0694fb0720db0c9c2e974d3a661918d5&mc=true&node=pt18.1.101&rgn=div5\n**we include asset retirement costs as a positive component of electric rate base. these arcs are mostly offset by aros, which are negative components of electric rate base. both arcs and aros are included in the \"other\" asset category.",
+      }
 
     columns:
       - name: parent_name
@@ -14,9 +20,9 @@ models:
       - name: year
         description: "Reporting year"
       - name: asset
-        description: "\"RMI's categorization of assets based on grouping of [steam,nuclear,hydro,renewables,other_fossil,transmission,distribution,other]\""
+        description: "RMI's categorization of assets based on grouping of [steam,nuclear,hydro,renewables,other_fossil,transmission,distribution,other]"
       - name: sub_asset
-        description: "\"RMI's categorization of sub_assets when asset=other based on grouping of [AROs,construction_work_in_progress,distribution_arc,electric_plant_held_for_future_use,electric_plant_leased_to_others,experimental_plant,general_plant,general_plant_arc,hydro_arc,intangible_plant,net_ADIT,net_regulatory_assets,net_working_capital,nuclear_arc,other_deferred_debits_and_credits,other_electric_plant,other_fossil_arc,other_noncurrent_liabilities,regional_transmission_and_market_operation,renewables_arc,steam_arc,transmission_arc]\""
+        description: "RMI's categorization of sub_assets when asset=other based on grouping of [AROs,construction_work_in_progress,distribution_arc,electric_plant_held_for_future_use,electric_plant_leased_to_others,experimental_plant,general_plant,general_plant_arc,hydro_arc,intangible_plant,net_ADIT,net_regulatory_assets,net_working_capital,nuclear_arc,other_deferred_debits_and_credits,other_electric_plant,other_fossil_arc,other_noncurrent_liabilities,regional_transmission_and_market_operation,renewables_arc,steam_arc,transmission_arc]"
       - name: asset_value
         description: "Asset value"
       - name: earnings_value
@@ -24,8 +30,14 @@ models:
       - name: investment_value
         description: "Investments (capital expenditure) in the given year on the asset. "
 
-  - name: ocustomers_sales
+  - name: rmi_customers_sales
     description: "Number of customers, MWh electricity sales, and revenues by customer type."
+    config:
+      meta: {
+        tname: "customers_sales",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "all data fields in customer_sales collected directly from ferc form 1.\n\nto get total customers, sales, or revenues, add together values for all customer types.",
+      }
 
     columns:
       - name: parent_name
@@ -49,6 +61,12 @@ models:
 
   - name: rmi_debt_equity_returns
     description: "Rate base, equity, debt, returns, earnings, interest expense, tax expense, and the rates of return used for earnings and revenue calculations."
+    config:
+      meta: {
+        tname: "debt_equity_returns",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "rmi applied rate case data values starting in the year after the rate case completion date, and continuing until the next rate case would go into effect.\n\nall values in debt_equity_returns are either end of year values or values that apply to the entire year.",
+      }
 
     columns:
       - name: parent_name
@@ -108,6 +126,12 @@ models:
 
   - name: rmi_emissions_targets
     description: "CO2 emissions and projections, as well as electricity generation and projections and comparison to RMI's 1.5C decarbonization pathway for the US electricity sector."
+    config:
+      meta: {
+        tname: "emissions_targets",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "the rmi utility transition hub portal also has functionality to normalize each company's historical and target emissions or emissions intensity to 2020 values, which allows for a more even visual comparison between company targets.\n\nthe rmi utility transition hub portal includes a calculated metric of total projected emissions from 2020-2030 above the 1.5 c trajectory (which can be viewed as either a total emissions value in mmt, or as a %). this metric is used as a measure of how climate-aligned each utility or parent company is.\n\nsee the portal at https://utilitytransitionhub.rmi.org/portal/.",
+      }
 
     columns:
       - name: parent_name
@@ -144,9 +168,17 @@ models:
         description: "Historical Scope 1CO2 emissions intensity & Projected Scope 1CO2 emissions intensity based on publicly stated emissions targets and projected generation from IRPs (all years)"
       - name: co2_intensity_1point5c
         description: "Projected Scope 1CO2 emissions intensity if the utility follows the US national-level emissions and net electricity generation trajectories from RMI's 1.5C decarbonization analysis."
+      - name: target_scope
+        description: "Scope 1 (own generation) or Scope 3 (purchased generation)"
 
   - name: rmi_employees
     description: "Number of employees that work at large power plants, by technology, for each utility"
+    config:
+      meta: {
+        tname: "employees",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "all data fields in customer_sales collected directly from ferc form 1.\n\nto get total customers, sales, or revenues, add together values for all customer types.",
+      }
 
     columns:
       - name: parent_name
@@ -164,6 +196,12 @@ models:
 
   - name: rmi_expenditure_bills_burden
     description: "Expenditure, average residential customer energy bill, and average residential customer energy burden for each utility by technology and customer group."
+    config:
+      meta: {
+        tname: "expenditure_bills_burden",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "to calculate the total expenditure, bill, or burden for a customer group, add together values for all technologies.\n\nto aggregate bill or burden to multiple utilities (e.g. a parent company or region), (1) aggregate the values in expenditure_bills_burden to that level, (2) aggregate housing_units_income to the same level, (3) combine the two data files, (4) calculate bill and burden using the equations above in the methodology column for each metric.",
+      }
 
     columns:
       - name: parent_name
@@ -191,6 +229,12 @@ models:
 
   - name: rmi_housing_units_income
     description: "Number of housing units and income by customer group for each utility."
+    config:
+      meta: {
+        tname: "housing_units_income",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "to aggregate bill or burden to multiple utilities (i.e. a parent company or region), (1) aggregate the values in expenditure_bills_burden to that level, (2) aggregate housing_units_income to the same level, (3) combine the two data files, (4) calculate bill and burden using the equations above in the methodology column for each metric.",
+      }
 
     columns:
       - name: parent_name
@@ -212,6 +256,12 @@ models:
 
   - name: rmi_net_plant_balance
     description: "Original cost, accumulated depreciation, and remaining net plant balance of electric plants in service, by FERC classification."
+    config:
+      meta: {
+        tname: "net_plant_balance",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "this table includes all \"electric plant in service\" components, which is not comprehensive of a utility's entire balance sheet. for the total balance sheet, see assets_earnings.",
+      }
 
     columns:
       - name: parent_name
@@ -289,6 +339,8 @@ models:
         description: "Emissions of carbon dioxide from fossil fuel combustion"
       - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
+      - name: emissions_sox
+        description: "Emissions of sulphur oxides from fossil fuel combustion"
       - name: utility_id_eia
         description: "Utility Code from EIA"
       - name: utility_type_rmi
@@ -304,6 +356,12 @@ models:
 
   - name: rmi_operations_emissions_by_fuel
     description: "Generation, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nWithin each generator, fuel consumption is differentiated by fuel type."
+    config:
+      meta: {
+        tname: "operations_emissions_by_fuel",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: parent_name
@@ -311,7 +369,7 @@ models:
       - name: utility_name
         description: "Name of utility"
       - name: year
-        description: "Reporting year (check)"
+        description: "Reporting year"
       - name: plant_name_eia
         description: "Plant name from EIA"
       - name: plant_id_eia
@@ -336,6 +394,8 @@ models:
         description: "Code for Independent System Operator (ISO) or Regional Transmission Operator (RTO) that the plant is connected to"
       - name: nerc_region
         description: "NERC region that the plant is located in"
+      - name: owned_or_total
+        description: "A filter used in the RMI Utility Transition Hub Portal. \"Owned\" lines are utility-owned power plants. \"Total\" lines include Purchased Power, Energy Efficiency, and Demand Response."
       - name: operating_month
         description: "Month that the generator began operating"
       - name: operating_year
@@ -352,6 +412,8 @@ models:
         description: "Emissions of carbon dioxide from fossil fuel combustion"
       - name: emissions_nox
         description: "Emissions of nitrous oxides from fossil fuel combustion"
+      - name: emissions_sox
+        description: "Emissions of sulphur oxides from fossil fuel combustion"
       - name: utility_id_eia
         description: "Utility Code from EIA"
       - name: utility_type_rmi
@@ -366,7 +428,13 @@ models:
         description: "Energy content of fuel consumed"
 
   - name: rmi_operations_emissions_by_tech
-    description: "Capacity, generation, capacity factor, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nEach generator is identified by a single technology. 2023"
+    description: "Capacity, generation, capacity factor, fuel consumption, and emissions of CO2, NOx, and SOx for each generator owned by each utility.\n\nEach generator is identified by a single technology."
+    config:
+      meta: {
+        tname: "operations_emissions_by_tech",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "if aggregating capacity online at the end of the year as we do in the utility transition hub, use the \"year_end_capacity\" field instead of the \"capacity\" field.",
+      }
 
     columns:
       - name: parent_name
@@ -432,6 +500,12 @@ models:
 
   - name: rmi_revenue_by_tech
     description: "Revenues for each utility, by technology and component, for each utility."
+    config:
+      meta: {
+        tname: "revenue_by_tech",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: parent_name
@@ -450,9 +524,17 @@ models:
         description: "Additional level of detail of revenue within each technology/component"
       - name: revenue_total
         description: "revenue from all customer classes"
+      - name: revenue_residential
+        description: "revenue from residential customer class"
 
   - name: rmi_state_policies
     description: "Policy data shown on the \"Policy & Regulations\" dashboard of the Utility Transition Hub Portal, by state. Includes status of securitzation, market indexing, and fuel pass through policies."
+    config:
+      meta: {
+        tname: "state_policies",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: state
@@ -467,9 +549,17 @@ models:
         description: "\"Passed through\" means that 100% of fuel costs incurred by electric utilities are allowed to be passed on to customers in the state. \"Shared\" means that there is some level of cost sharing between electric utilities and customers."
       - name: governor_party
         description: "Political party that the governor belongs to."
+      - name: legislation_majority_party
+        description: "Political party that controls the state legislature."
 
   - name: rmi_state_targets
     description: "Greenhouse gas (GHG) and renewable portfolio standard (RPS) data by state, including baseline, interim, and final target years."
+    config:
+      meta: {
+        tname: "state_targets",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: state
@@ -484,9 +574,17 @@ models:
         description: "Whether the target is mandatory or a non-binding goal (voluntary)"
       - name: target_type
         description: "Whether the target_value refers to a greenhouse gas (GHG) reduction or a renewable portfolio standard (RPS)"
+      - name: target_value
+        description: "The percentage reduction of GHGs or percentage of renewables required under an RPS"
 
   - name: rmi_utility_information
     description: "Utility identifiers such as name, ID numbers from various sources, and utility type. Includes connections from operating companies to parent companies."
+    config:
+      meta: {
+        tname: "utility_information",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "the scope of utilities included in the rmi utility transition hub is comprehensive of ferc form 1 respondents.\n\nrelationships between utilities and parent companies were determined by rmi using company websites, and are current as of end of this dataset (2020).",
+      }
 
     columns:
       - name: parent_name
@@ -515,9 +613,17 @@ models:
         description: "Year in which utility last reported to FERC Form 1"
       - name: duplicate_utility_id_eia
         description: "Whether or not the utility_id_eia is a duplicate of another utility_id_eia, because the respondent is either an old company that has sinced merged into a new FERC respondent or the respondent has the same name as another respondent but does not report any data. \n\nThis duplication is important to note when converting utility_id_eia to respondent_id; the lines where duplicate_utility_id_eia=True should be removed to avoid double-counting of a dataset."
+      - name: entity_id
+        description: "XBRL-coded Utility ID from FERC"
 
   - name: rmi_utility_information_2023
     description: "Utility identifiers such as name, ID numbers from various sources, and utility type. Includes connections from operating companies to parent companies."
+    config:
+      meta: {
+        tname: "utility_information",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "the scope of utilities included in the rmi utility transition hub is comprehensive of ferc form 1 respondents.\n\nrelationships between utilities and parent companies were determined by rmi using company websites, and are current as of end of this dataset (2020).",
+      }
 
     columns:
       - name: parent_name
@@ -543,6 +649,12 @@ models:
 
   - name: rmi_utility_state_map
     description: "A list of states that each utility operates in, including capacity owned in state, capacity operated in state, and energy sales in state."
+    config:
+      meta: {
+        tname: "utility_state_map",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: parent_name
@@ -559,9 +671,17 @@ models:
         description: "Total nameplate capacity of plants owned by the utility in this state."
       - name: capacity_operated_in_state
         description: "Total nameplate capacity of plants operated by the utility in this state."
+      - name: mwh_sales_in_state
+        description: "Energy sales, in MWh, to all customer types."
 
   - name: rmi_utility_state_map_2023
     description: "A list of states that each utility operates in, including capacity owned in state, capacity operated in state, and energy sales in state."
+    config:
+      meta: {
+        tname: "utility_state_map",
+        parent_schema: "mdt_sandbox",
+        Additional_notes: "null",
+      }
 
     columns:
       - name: parent_name
@@ -576,6 +696,8 @@ models:
         description: "Total nameplate capacity of plants owned by the utility in this state."
       - name: capacity_operated_in_state
         description: "Total nameplate capacity of plants operated by the utility in this state."
+      - name: mwh_sales_in_state
+        description: "Energy sales, in MWh, to all customer types."
       - name: utility_id_eia
         description: "Utility ID from FERC"
 
