@@ -6,7 +6,7 @@ models:
     config:
       meta: {
         tname: "assets_earnings_investments",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "*for a detailed description of ferc accounts, see https://www.ecfr.gov/cgi-bin/text-idx?sid=0694fb0720db0c9c2e974d3a661918d5&mc=true&node=pt18.1.101&rgn=div5\n**we include asset retirement costs as a positive component of electric rate base. these arcs are mostly offset by aros, which are negative components of electric rate base. both arcs and aros are included in the \"other\" asset category.",
       }
 
@@ -35,7 +35,7 @@ models:
     config:
       meta: {
         tname: "customers_sales",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "all data fields in customer_sales collected directly from ferc form 1.\n\nto get total customers, sales, or revenues, add together values for all customer types.",
       }
 
@@ -64,7 +64,7 @@ models:
     config:
       meta: {
         tname: "debt_equity_returns",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "rmi applied rate case data values starting in the year after the rate case completion date, and continuing until the next rate case would go into effect.\n\nall values in debt_equity_returns are either end of year values or values that apply to the entire year.",
       }
 
@@ -129,7 +129,7 @@ models:
     config:
       meta: {
         tname: "emissions_targets",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "the rmi utility transition hub portal also has functionality to normalize each company's historical and target emissions or emissions intensity to 2020 values, which allows for a more even visual comparison between company targets.\n\nthe rmi utility transition hub portal includes a calculated metric of total projected emissions from 2020-2030 above the 1.5 c trajectory (which can be viewed as either a total emissions value in mmt, or as a %). this metric is used as a measure of how climate-aligned each utility or parent company is.\n\nsee the portal at https://utilitytransitionhub.rmi.org/portal/.",
       }
 
@@ -176,7 +176,7 @@ models:
     config:
       meta: {
         tname: "employees",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "all data fields in customer_sales collected directly from ferc form 1.\n\nto get total customers, sales, or revenues, add together values for all customer types.",
       }
 
@@ -199,7 +199,7 @@ models:
     config:
       meta: {
         tname: "expenditure_bills_burden",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "to calculate the total expenditure, bill, or burden for a customer group, add together values for all technologies.\n\nto aggregate bill or burden to multiple utilities (e.g. a parent company or region), (1) aggregate the values in expenditure_bills_burden to that level, (2) aggregate housing_units_income to the same level, (3) combine the two data files, (4) calculate bill and burden using the equations above in the methodology column for each metric.",
       }
 
@@ -232,7 +232,7 @@ models:
     config:
       meta: {
         tname: "housing_units_income",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "to aggregate bill or burden to multiple utilities (i.e. a parent company or region), (1) aggregate the values in expenditure_bills_burden to that level, (2) aggregate housing_units_income to the same level, (3) combine the two data files, (4) calculate bill and burden using the equations above in the methodology column for each metric.",
       }
 
@@ -259,7 +259,7 @@ models:
     config:
       meta: {
         tname: "net_plant_balance",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "this table includes all \"electric plant in service\" components, which is not comprehensive of a utility's entire balance sheet. for the total balance sheet, see assets_earnings.",
       }
 
@@ -292,7 +292,7 @@ models:
     config:
       meta: {
         tname: "operations_emissions_by_fuel",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
@@ -365,7 +365,7 @@ models:
     config:
       meta: {
         tname: "operations_emissions_by_tech",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "if aggregating capacity online at the end of the year as we do in the utility transition hub, use the \"year_end_capacity\" field instead of the \"capacity\" field.",
       }
 
@@ -436,7 +436,7 @@ models:
     config:
       meta: {
         tname: "revenue_by_tech",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
@@ -465,7 +465,7 @@ models:
     config:
       meta: {
         tname: "state_policies",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
@@ -490,7 +490,7 @@ models:
     config:
       meta: {
         tname: "state_targets",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
@@ -515,7 +515,7 @@ models:
     config:
       meta: {
         tname: "utility_information",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "the scope of utilities included in the rmi utility transition hub is comprehensive of ferc form 1 respondents.\n\nrelationships between utilities and parent companies were determined by rmi using company websites, and are current as of end of this dataset (2020).",
       }
 
@@ -554,7 +554,7 @@ models:
     config:
       meta: {
         tname: "utility_information",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "the scope of utilities included in the rmi utility transition hub is comprehensive of ferc form 1 respondents.\n\nrelationships between utilities and parent companies were determined by rmi using company websites, and are current as of end of this dataset (2020).",
       }
 
@@ -585,7 +585,7 @@ models:
     config:
       meta: {
         tname: "utility_state_map",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
@@ -612,7 +612,7 @@ models:
     config:
       meta: {
         tname: "utility_state_map",
-        parent_schema: "mdt_sandbox",
+        parent_schema: "rmi",
         Additional_notes: "null",
       }
 
